@@ -7,12 +7,12 @@ const methodOverride = require('method-override')
 const campgroundRoutes = require('./routes/campgrounds.js')
 const connectDB = require('./db.js')
 
+const app = express()
+const PORT = process.env.PORT || 5000
 
 
 connectDB()
 
-const app = express()
-const PORT = process.env.PORT || 5000
 
 app.set('view engine', 'ejs')
 app.set('views', path.join(__dirname, 'views')) // This says, look in the folder where this index.js file is and look for the views folder for my templates

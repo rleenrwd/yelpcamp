@@ -35,7 +35,7 @@ router.get('/:id/edit', async (req, res) => {
 // UPDATE CAMPGROUND ROUTE
 router.put('/:id', async (req, res) => {
     const {id} = req.params
-    const campground = await Campground.findByIdAndUpdate(id, {...req.body.campground})
+    const campground = await Campground.findByIdAndUpdate(id, {...req.body.campground}) // The spread operator will copy the req.body campground object into the found campground and update
     res.redirect(`/campgrounds/${campground._id}`)
 })
 
